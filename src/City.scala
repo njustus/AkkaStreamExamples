@@ -12,8 +12,8 @@ object City
     extends App
     with WithStream {
   init(1000) {
-    val srcFile = Paths.get(System.getProperty("user.home")).resolve("Downloads/cities.csv")
-    val targetFile = srcFile.getParent.resolve("filteredCities.csv")
+    val srcFile = Paths.get(getClass.getResource("/cities.csv").toURI)
+    val targetFile = Paths.get(System.getProperty("user.home")).resolve("Downloads/filteredCities.csv")
 
     case class City(name:String, country:String, population:Long)
 
